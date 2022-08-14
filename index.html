@@ -20,8 +20,10 @@
         }
         let computerSelection = getComputerChoice();
         console.log(computerSelection);
+        let playerSelection;
 
-        function playGame(playerSelection, computerSelection) {
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = prompt("Enter Rock, Paper or Scissors");
             playerSelection = playerSelection.toUpperCase();
             if (playerSelection === "ROCK" && computerSelection === "PAPER") {
                 return "You Lose! Paper beats Rock";
@@ -43,8 +45,12 @@
 
             if (playerSelection === computerSelection) return "Tie";
         }
-        let playerSelection = "roCk"
-        console.log(playGame(playerSelection, computerSelection));
+
+        function game() {
+            for (let i = 0; i < 5; i++) {
+               console.log(playRound(playerSelection, computerSelection));
+            }
+        }
     </script>
 </body>
 </html>
